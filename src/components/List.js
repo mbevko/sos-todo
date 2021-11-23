@@ -25,4 +25,4 @@ export default function List () {
             <Items list={list}/>
         </div>
     )
-}
+};
