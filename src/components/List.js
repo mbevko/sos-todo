@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Form from './Form';
+import Header from './Header';
+import Items from './Items';
 
 export default function List () {
 
@@ -10,22 +13,16 @@ export default function List () {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefaul()
+        e.preventDefault()
         setList(prev => [...prev, item])
+        setItem('')
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} value={item}/>
-            </form>
-            {list.map((item, index) => {
-                return (
-                    <ul>
-                        <li key={index}>{item}</li>
-                    </ul>
-                )
-            })}
+            <Header list={list} />
+            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
+            <Items list={list}/>
         </div>
     )
 }
