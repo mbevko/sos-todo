@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 import Header from './Header';
 import Items from './Items';
+import './List.css'
 
 export default function List () {
 
@@ -19,7 +20,7 @@ export default function List () {
     };
 
     return (
-        <div>
+        <div className="app">
             <Header list={list} />
             <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
             <Items list={list}/>

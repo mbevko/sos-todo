@@ -1,0 +1,23 @@
+.app {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+
+ol {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    width: 400px;
+    height: 25px;
+    font-size: 12pt;
+    outline: none;
+}
