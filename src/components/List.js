@@ -22,8 +22,8 @@ export default function List () {
     return (
         <div className="app">
             <Header list={list} />
-            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
             <Items list={list}/>
+            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
         </div>
     )
 };
