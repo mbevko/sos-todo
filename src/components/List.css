@@ -8,6 +8,12 @@
     height: 100vh;
 }
 
+.header {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
 ol {
     padding: 0;
     width: 400px;
