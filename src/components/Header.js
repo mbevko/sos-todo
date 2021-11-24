@@ -2,6 +2,8 @@
 export default function Header ({list}) {
 
     return(
-        <h1>My todo list <span style={{color:"red"}}>{list.length}</span></h1>
+        <div className="header">
+            <h1>Reminders <span style={{color:"green"}}>{list.length}</span></h1>
+        </div>
     )
 }

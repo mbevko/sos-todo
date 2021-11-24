@@ -2,17 +2,25 @@
     width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin: auto;
     align-items: center;
+    height: 100vh;
 }
 
 ol {
     padding: 0;
+    width: 400px;
+    display: flex;
+    align-items: flex-start;
+
 }
 
 li {
     list-style: none;
+    border-bottom: solid black 1px;
+    padding-bottom: 2px;
+    width: 100%;
 }
 
 input {
@@ -20,4 +28,8 @@ input {
     height: 25px;
     font-size: 12pt;
     outline: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid black 1px;
 }

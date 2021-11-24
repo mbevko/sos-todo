@@ -3,7 +3,7 @@ export default function Items ({list}) {
         <ol>
         {list.map((item, index) => {
             return (
-                    <li key={index + 1}>{item}</li>
+                    <li key={index + 1}><span class="check"></span>{item}</li>
             )
         })}
         </ol>
