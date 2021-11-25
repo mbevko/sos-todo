@@ -7,7 +7,11 @@ import './List.css'
 export default function List() {
 
     const [item,
-        setItem] = useState({hours: 0, time: '00:00', task: ''});
+        setItem] = useState({
+            hours: 0, 
+            time: '00:00', 
+            task: ''
+        });
 
     const [list,
         setList] = useState([])
@@ -54,6 +58,9 @@ export default function List() {
             <Form handleChange={handleChange} item={item} handleSubmit={handleSubmit}/>
             <Items list={list}/>
             <AddHours/>
+            <div>
+                <p>Tasks: {list.length}</p>
+            </div>
         </div>
 
     )
