@@ -35,11 +35,6 @@ export default function List() {
         setItem({hours: 0, time: '', task: ''})
     };
 
-    // list.reduce((a, b) => ({hours: parseInt(a.hours) + parseInt(b.hours)}))
-    // list.reduce((a, b) => ({hours: parseInt(a.hours) + parseInt(b.hours)}))
-    // console.log(list.reduce((a, b) => ({hours: parseInt(a.hours) +
-    // parseInt(b.hours)})))
-
     function AddHours() {
 
         if (list.length > 0) {
@@ -48,7 +43,7 @@ export default function List() {
             }))
             return <p>Billable hours: {totalHours.hours}</p>
         } else {
-            return <p>Billable   hours: 0</p>
+            return <p>Billable hours: 0</p>
         }
     }
 
