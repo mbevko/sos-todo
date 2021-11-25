@@ -7,25 +7,33 @@ import './List.css'
 export default function List () {
 
     const [item, setItem] = useState({
-        cmpltd: 'done',
-        hours: 0,
-        time: 0,
+        /* cmpltd: 'done', */
+        hours: '',
+        time: '00:00:00',
         task: ''
     });
 
     const [list, setList] = useState([])
+    
 
     const handleChange = (e) => {
-        setItem({task: e.target.value})
+        const value = e.target.value
+        
+        setItem({
+            /* cmpltd: {[e.target.name]: value}, */
+            hours: {[e.target.name]: value},
+            time: {[e.target.name]: value},
+            task: {[e.target.name]: value}
+        })
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setList(prev => [...prev, item])
+        console.log(item)
         setItem({
-            compltd: '',
-            hours: 0,
-            time: 0,
+            hours: '',
+            time: '',
             task: ''
         })
     };
@@ -33,7 +41,7 @@ export default function List () {
     return (
         <div className="app">
             <Header list={list} />
-            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
+            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item} />
             <Items list={list} />
         </div>
     )
