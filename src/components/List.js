@@ -6,24 +6,31 @@ import './List.css'
 
 export default function List () {
 
-    const [item, setItem] = useState('')
+    const [item, setItem] = useState({
+        cmpltd: '',
+        hours: 0,
+        time: '',
+        task: ''
+    });
+
     const [list, setList] = useState([])
 
     const handleChange = (e) => {
-        setItem(e.target.value)
+        setItem({task: e.target.value})
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setList(prev => [...prev, item])
-        setItem('')
+        setItem({})
     };
 
     return (
         <div className="app">
             <Header list={list} />
             <Items list={list}/>
-            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
+            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item.task}/>
         </div>
     )
 };
+
