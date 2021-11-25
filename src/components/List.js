@@ -46,9 +46,9 @@ export default function List() {
             const totalHours = list.reduce((a, b) => ({
                 hours: parseInt(a.hours) + parseInt(b.hours)
             }))
-            return <p>Total hours: {totalHours.hours}</p>
+            return <p>Billable hours: {totalHours.hours}</p>
         } else {
-            return <p>Total hours: 0</p>
+            return <p>Billable   hours: 0</p>
         }
     }
 
