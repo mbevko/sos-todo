@@ -4,8 +4,9 @@ export default function Form({handleChange, handleSubmit, item}) {
         <form onSubmit={handleSubmit}>
             <input className="sub_field completed_field" type="checkbox" />
             <input className="sub_field hours_field" type="number" min="0" />
-            <input className="sub_field apt_field"/>
-            <input className="task_field" onChange={handleChange} /* value={item.task} *//>
+            <input className="sub_field apt_field" type="time"/>
+            <input className="task_field" onChange={handleChange} value={item.task}/>
+            <input type="submit" onSubmit="handleSubmit" />
         </form>
     )
 }

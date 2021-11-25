@@ -1,5 +1,5 @@
 .app {
-    width: 500px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -14,9 +14,16 @@
     justify-content: space-between;
 }
 
+form {
+    margin-bottom: 15px;
+}
+
+input {
+    height: 30px;
+}
+
 .task_field {
     width: 300px;
-    height: 25px;
     font-size: 12pt;
     border-left: none;
     border-top: none;
@@ -41,14 +48,18 @@
 .hours_field {
     width: 40px;
     border-right: none;
-    border-left: none;
+    border-left: none   ;
     border-bottom: solid black 1px;
 }
 
 .apt_field {
-    
+    width: 100px
 }
 
-check::active {
-    background: green;
+.printed_task {
+    width: 400px;
+}
+
+.printed_task div {
+    display: inline-block;
 }

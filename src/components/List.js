@@ -7,9 +7,9 @@ import './List.css'
 export default function List () {
 
     const [item, setItem] = useState({
-        cmpltd: '',
+        cmpltd: 'done',
         hours: 0,
-        time: '',
+        time: 0,
         task: ''
     });
 
@@ -22,14 +22,19 @@ export default function List () {
     const handleSubmit = (e) => {
         e.preventDefault()
         setList(prev => [...prev, item])
-        setItem({})
+        setItem({
+            compltd: '',
+            hours: 0,
+            time: 0,
+            task: ''
+        })
     };
 
     return (
         <div className="app">
             <Header list={list} />
-            <Items list={list}/>
-            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item.task}/>
+            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item}/>
+            <Items list={list} />
         </div>
     )
 };
