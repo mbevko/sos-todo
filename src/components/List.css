@@ -9,57 +9,86 @@
 }
 
 .header {   
-    width: 400px;
+    width: 500px;
     display: flex;
     justify-content: space-between;
 }
 
 form {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 input {
     height: 30px;
-}
-
-.task_field {
-    width: 300px;
-    font-size: 12pt;
-    border-left: none;
-    border-top: none;
-    border-right: none;
     border-bottom: solid black 1px;
     outline: none;
-    padding: 0;
-    margin: 0;
-    height: 15px;
-    padding-bottom: 2px;
-    padding-left: 5px;
 }
+
 
 .sub_field {
     width: 40px;
-    border-top: none;
-    border-left: solid black 1px;
-    border-bottom: solid black 1px;
-    border-right: solid black 1px;
 }
 
 .hours_field {
-    width: 40px;
+    height: 22px;
+    padding: 0;
+    border-left: none;
+    border-top: none;
     border-right: none;
-    border-left: none   ;
-    border-bottom: solid black 1px;
+    border-left: solid black 1px;
 }
 
-.apt_field {
-    width: 100px
+.time_field {
+    height: 22px;
+    width: 100px;
+    padding: 0;
+    border-left: solid black 1px;
+    border-top: none;
+    border-right: solid black 1px;
 }
 
-.printed_task {
-    width: 400px;
+.task_field {
+    height: 20px;
+    width: 300px;
+    font-size: 12pt;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
 }
 
-.printed_task div {
+.submit {
+    height: 22px;
+    border: solid black 1px;
+    background: none;
+
+}
+
+.hours_field_output {
+    width: 40px;
+    border-right: solid black 1px;
+}
+
+.time_field_output {
+    width: 100px;
+    border-right: solid black 1px;
+}
+
+.task_field_output {
+    width: 300px;
+}
+
+
+.printed_tasks {
+    width: 540px;
+}
+
+.printed_tasks div {
     display: inline-block;
+    border-bottom: solid black 1px;
 }

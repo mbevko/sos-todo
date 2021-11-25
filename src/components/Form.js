@@ -1,4 +1,4 @@
-export default function Form({handleChange, handleSubmit, item, }) {
+export default function Form({handleChange, handleSubmit, item}) {
 
     return (
         <form onSubmit={handleSubmit}>
@@ -11,18 +11,18 @@ export default function Form({handleChange, handleSubmit, item, }) {
                 name="hours"
                 value={item.hours}/>
             <input
-                className="sub_field apt_field"
-                onChange={handleChange}
+                className="sub_field time_field"
+                onInput={handleChange}
                 type="time"
                 name="time"
                 value={item.time}/>
             <input
                 className="task_field"
-                onChange={handleChange}
+                onInput={handleChange}
                 type="text"
                 value={item.task}
-                name="task" />
-            <input type="submit" onSubmit={handleSubmit}/>
+                name="task"/>
+            <input className="submit" type="submit" onSubmit={handleSubmit}/>
         </form>
     )
 }

@@ -1,49 +1,60 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Form from './Form';
 import Header from './Header';
 import Items from './Items';
 import './List.css'
 
-export default function List () {
+export default function List() {
 
-    const [item, setItem] = useState({
-        /* cmpltd: 'done', */
-        hours: '',
-        time: '00:00:00',
-        task: ''
-    });
+    const [item,
+        setItem] = useState({hours: 0, time: '00:00', task: ''});
 
-    const [list, setList] = useState([])
-    
+    const [list,
+        setList] = useState([])
 
     const handleChange = (e) => {
-        const value = e.target.value
-        
+        let value = e.target.value;
+        let name = e.target.name;
+
         setItem({
-            /* cmpltd: {[e.target.name]: value}, */
-            hours: {[e.target.name]: value},
-            time: {[e.target.name]: value},
-            task: {[e.target.name]: value}
+            ...item,
+            [name]: value
         })
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setList(prev => [...prev, item])
-        console.log(item)
-        setItem({
-            hours: '',
-            time: '',
-            task: ''
-        })
+        setList(prev => [
+            ...prev,
+            item
+        ])
+        setItem({hours: 0, time: '', task: ''})
     };
+
+    // list.reduce((a, b) => ({hours: parseInt(a.hours) + parseInt(b.hours)}))
+    // list.reduce((a, b) => ({hours: parseInt(a.hours) + parseInt(b.hours)}))
+    // console.log(list.reduce((a, b) => ({hours: parseInt(a.hours) +
+    // parseInt(b.hours)})))
+
+    function AddHours() {
+
+        if (list.length > 0) {
+            const totalHours = list.reduce((a, b) => ({
+                hours: parseInt(a.hours) + parseInt(b.hours)
+            }))
+            return <p>Total hours: {totalHours.hours}</p>
+        } else {
+            return <p>Total hours: 0</p>
+        }
+    }
 
     return (
         <div className="app">
-            <Header list={list} />
-            <Form handleChange={handleChange} handleSubmit={handleSubmit} item={item} />
-            <Items list={list} />
+            <Header list={list}/>
+            <Form handleChange={handleChange} item={item} handleSubmit={handleSubmit}/>
+            <Items list={list}/>
+            <AddHours/>
         </div>
+
     )
 };
-
