@@ -32,7 +32,9 @@ export default function List() {
             ...prev,
             item
         ])
-        setItem({hours: 0, time: '', task: ''})
+        setItem({
+            hours: 0, time: '', task: ''
+        })
     };
 
     function AddHours() {
